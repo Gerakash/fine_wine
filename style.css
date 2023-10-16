@@ -114,3 +114,8 @@ small{
 #result{
     margin: 0;
 }
+
+#my-name, #frontendmentor {
+    text-decoration: none;
+    font-style: italic;
+}

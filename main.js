@@ -11,14 +11,13 @@ ageFormSubmit.addEventListener("submit", (e) => {
     }
 })
 
-// functions
+
 const errorMsg = (message, inputId) => {
     const errMsgInput = document.getElementById(inputId);
     const errMsgTxt = errMsgInput.nextElementSibling;
     if (errMsgTxt) {
         errMsgInput.classList.add("error")
         errMsgTxt.innerHTML = message.replace(/\n/g, '<br/>');
-        // errMsgTxt.innerText = message
     }
 }
 
@@ -35,13 +34,16 @@ const isLeapYear = (year) =>{
     return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
 }
 
-
+// Validating age
 const validateInput = () => {
     const day = parseInt(document.getElementById("day").value)
     const month = parseInt(document.getElementById("month").value)
     const year = parseInt(document.getElementById("year").value)
+
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth() + 1;
     
-    // Clear previous error messages
     clearErrorMsg("day");
     clearErrorMsg("month");
     clearErrorMsg("year");
@@ -63,7 +65,7 @@ const validateInput = () => {
         return;
     }
 
-    const currentYear = new Date().getFullYear();
+    // const currentYear = new Date().getFullYear();
 
     if (year > currentYear) {
         errorMsg("Must be a valid year", "year");
@@ -78,6 +80,23 @@ const validateInput = () => {
         errorMsg("The day does not exist \nin the selected month.", "day");
         return;
     }
+
+    // Calc age
+    
+
+    const ageYear = currentYear - year;
+    const ageMonth = currentMonth - month;
+    const ageDay = currentDate.getDate() - day;
+
+    const resultYear = document.getElementById("result-year");
+    const resultMonth = document.getElementById("result-month");
+    const resultDay = document.getElementById("result-day");
+
+    resultYear.innerText = ageYear
+    resultMonth.innerText = ageMonth
+    resultDay.innerText = ageDay
+
+
 }
 
 
