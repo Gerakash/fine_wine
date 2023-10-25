@@ -5,7 +5,6 @@ body{
     background-color: #F0F0F0;
     margin: 0;
     padding: 0;
-    height: 100%;
     font-family: "Poppins", sans-serif;
     display: flex;
     align-items: center;
@@ -14,8 +13,8 @@ body{
 
 .main{
     background-color: #fff;
-    min-width: 52rem;
-    min-height: 40rem;
+    width: 52rem;
+    height: 40rem;
     border-radius: 24px 24px 200px 24px;
     margin: auto;
     margin: 6rem;
@@ -33,8 +32,8 @@ body{
 }
 
 .line{
-    width: 630px;
-    height: 2px;
+    width: 100%;
+    height: 0.1rem;
     background-color: #DCDCDC;
 
 }
@@ -53,10 +52,8 @@ body{
 form label{
     color: #716F6F;
     padding-bottom: 0.5rem;
-    /* font-family: "Poppins", sans-serif; */
     font-size: 0.7rem;
     font-weight: bold;
-    /* letter-spacing: ; */
 }
 
 
@@ -118,4 +115,109 @@ small{
 #my-name, #frontendmentor {
     text-decoration: none;
     font-style: italic;
+}
+
+
+/* responsive */
+
+@media screen and (max-width: 850px) {
+    .main {
+        width: 45rem;
+        height: 35rem;
+    }
+    .btn-submit{
+        width: 4rem;
+        height: 4rem;
+        font-size: 2rem;
+    }
+    .result-wrapper{
+        font-size: 5rem;
+    }
+  }
+
+  @media screen and (max-width: 760px){
+    .main{
+        margin: 2rem;
+        width: 40rem;
+        height: 30rem;
+    }
+    .form-wrapper{
+        display: flex;
+        padding: 2.5rem 0rem 0rem 2.5rem;
+        gap: 1rem;
+  }
+
+    .btn-wrapper{
+        padding: 2.5rem 2.5rem;
+    }
+    .btn-submit{
+        margin: -60%;
+    }
+
+    
+    .result-wrapper{
+    font-size: 4rem;
+    }
+
+    input{
+        font-size: 1.5rem;
+        padding: 0.50rem 1rem;
+    }
+    
+}
+
+@media screen and (max-width: 600px){
+    .main{
+        margin: 2rem;
+        width: 30rem;
+        height: 30rem;
+    }
+   
+
+    .result-wrapper{
+    font-size: 3rem;
+    }
+
+    input{
+        width: 8rem;
+        height: 4rem;
+        font-size: 1.5rem;
+        padding: 0.50rem 1rem;
+    }
+  
+    
+}
+
+@media screen and (max-width: 500px){
+    .main{
+        margin: 2rem;
+        width: 22rem;
+        height: 30rem;
+    }
+
+    .form-wrapper{
+        display: flex;
+        padding: 2rem 0rem 0rem 2rem;
+        gap: 1rem;
+  }
+
+    .btn-wrapper{
+        padding: 3rem 2rem;
+    }
+
+    .result-wrapper{
+    font-size: 3rem;
+    }
+
+    input{
+        width: 5.5rem;
+        height: 3.5rem;
+        font-size: 1rem;
+        padding: 0.50rem 1rem;
+    }
+    
+    .attribution{
+        font-size: 0.8rem;
+    }
+    
 }
